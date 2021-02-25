@@ -4,7 +4,7 @@ const CreateTodo = async (req, res) => {
   try {
     const todo = new Todo({ ...req.body, user_id: req.params.user_id })
     todo.save()
-    res.send(Todo)
+    res.send(todo)
   } catch (error) {
     res.status(500).json({ msg: error.message })
   }
