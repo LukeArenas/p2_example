@@ -2,8 +2,7 @@ const { Todo } = require('../models')
 
 const CreateTodo = async (req, res) => {
   try {
-    const todo = new Todo({ ...req.body, user_id: req.params.user_id })
-    todo.save()
+    const todo = await Todo.create({ ...req.body, user_id: req.params.user_id })
     res.send(todo)
   } catch (error) {
     res.status(500).json({ msg: error.message })
