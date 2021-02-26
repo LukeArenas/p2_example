@@ -6,7 +6,6 @@ const UserRouter = require('./routes/UserRouter')
 const TodoRouter = require('./routes/TodoRouter')
 const db = require('./db')
 const path = require('path')
-require('dotenv').config()
 const app = express()
 
 const PORT = process.env.PORT || 3001
